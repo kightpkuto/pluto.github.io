@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5cmtrengiay</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background: #f4f4f4;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        /* Navbar mobile optimization */
+        .navbar {
+            background: linear-gradient(45deg, #007bff, #00c4ff);
+            padding: 8px 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .container-fluid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-size: 1.1rem;
+            color: white;
+            font-weight: 600;
+            margin-right: auto;
+        }
+
+        .navbar-toggler {
+            border: none;
+            margin-left: auto;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        .nav-link {
+            color: white !important;
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            text-align: center;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        .nav-item.disabled .nav-link {
+            color: rgba(255, 255, 255, 0.5) !important;
+        }
+
+        .dropdown-menu {
+            background: #007bff;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-item {
+            color: white;
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .dropdown-divider {
+            border-color: rgba(255, 255, 255, 0.3);
+            margin: 2px 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: #007bff;
+                padding: 8px;
+                border-radius: 0 0 10px 10px;
+                text-align: center;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 200px;
+                z-index: 999;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .navbar-collapse.show {
+                transform: translateX(0);
+            }
+
+            .navbar-nav {
+                margin-bottom: 5px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .nav-item {
+                width: auto;
+                display: block;
+            }
+
+            .d-flex {
+                flex-direction: column;
+                gap: 5px;
+                align-items: center;
+                margin-right: 10px;
+            }
+        }
+
+        /* Đảm bảo card không đè lên navbar */
+        .card {
+            margin-top: 20px;
+        }
+
+        /* Điều chỉnh hình ảnh trong card */
+        .card-img-custom {
+            max-width: 120px; /* Giới hạn chiều rộng ảnh */
+            height: auto;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto; /* Căn giữa hình ảnh trong cột */
+        }
+
+        /* Giữ layout ngang và căn giữa trên mobile */
+        @media (max-width: 767px) {
+            .card .row {
+                flex-direction: row;
+                align-items: center;
+            }
+            .card-img-custom {
+                max-width: 100px; /* Nhỏ hơn trên mobile */
+            }
+            .card-body {
+                padding: 0.75rem;
+            }
+            .card-title {
+                font-size: 1rem;
+            }
+            .card-text {
+                font-size: 0.875rem;
+            }
+            .col-4 {
+                display: flex;
+                justify-content: center; /* Căn giữa nội dung cột chứa ảnh */
+            }
+			body {
+			  font-family: 'Lora', serif;
+			}
+			img {
+			  border-radius: 9px;
+			}
+		.dark-mode {
+			  background-color: #222;
+			  color: #ddd;
+			}
+
+        }
+    </style>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../../../trangchump.html">PLUTO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../../../trangchump.html">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="TTtacgia/tttgmp.html">Thông Tin Tác Giả</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Danh mục Chính
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../../../CodeFolder/truyenngan/trangchu.html">Truyện Ngắn</a></li>
+							<li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../CodeFolder/vanhoc/trangchu.html">Văn học</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../CodeFolder/tieuthuyet/trangchu.html">Tiểu Thuyết</a></li>
+							<li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../CodeFolder/tusu/trangchu.html">Tự Sự</a></li>
+							<li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../CodeFolder/bailuan/trangchu.html">Bài Luận</a></li>
+							<li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../CodeFolder/tho/tho.html">Thơ</a></li>
+							<li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../../../CodeFolder/TruyenNgauTac/truyenngautac.html">Truyện Ngẫu Tác</a></li>
+                        </ul>
+                    </li>
+					<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Danh mục Phụ
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../../tintuclienquan/trangchu.html">Tin Tức Liên Quan</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../Trangchu.html">Chia sẻ quan tâm</a></li>
+                        </ul>
+                    </li>
+					
+                    <li class="nav-item">
+                        
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!-------------------------------------------gioithieu--------------------------------------------------------------------->
+	<h4> "5 Centimét trên giây": trưởng thành nhờ đau thương </h4>
+	
+	<p>"5 Centimét trên giây" ra mắt vào 2007, là tác phẩm góp phần đưa tên tuổi Shinkai Makoto ra ánh sáng. Bộ phim đã trở thành hiện tượng của điện ảnh Nhật bản ngay khi vừa ra mắt và xuất sắc giành giải Phim hoạt hình xuất sắc nhất tại lễ trao giải điện ảnh Châu Á Thái Bình Dương.</p>
+    <!-------------------------------------------Vidieo 1--------------------------------------------------------------------->
+	<iframe width="440" height="315" src="https://www.youtube.com/embed/0CjmUV2twEg?si=ooNTXQpRzclV53NU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	
+	
+  	<!------------------------------------------Hình ảnh1---------------------------------------------------------------------->
+	<hr>
+	<p> <i> "Này,tớ nghe nói Vận tốc là năm centimet trên giây" <br><br> "gì cơ?" <br><br> [...] <br><br> "Vận tốc rơi hoa anh đào ấy. Năm centimet trên giây"</i></p>
+	<hr>
+ 	<!--------------------------------------------Vidieo 2--------------------------------------------------------------------->
+  	<iframe width="440" height="315" src="https://www.youtube.com/embed/205wyyQKdRU?si=_aAXl7fLdvQD1ZAr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <!--------------------------------------------------------------------------------------------------------------------->
+ 	<p>là câu chuyện về cuộc đời của những bạn trẻ mà Toono Takaki là nhân vật trung tâm. Lần lượt từng câu chuyện là từng dấu mốc quan trọng trong cuộc đời của Takaki, tình yêu sâu đậm và cả cuộc chia tay trong đau đớn.</p>
+
+
+	<p>Cậu vẫn luôn day dứt, tiếc nuối về một kỷ niệm đã trôi xa trong quá khứ.</p>
+
+	<hr>
+	<p><i>“Nếu vận tốc của hoa anh đào không phải là 5cm/s thì có lẽ nó sẽ không đẹp như thế. Và nếu khoảng cách giữa tôi và em là 5cm, thì có lẽ chỉ cần một bước để đến với em chứ không phải là cả một đời người.<br><br>
+
+	Hoa anh đào vẫn rơi
+	Và tôi đã nắm trượt nó.”</i></p>
+	<hr>
+	
+	<p>Bộ phim mở đầu bằng câu chuyện của Takaki và Akari năm mười ba tuổi, tình cảm của hai đứa trẻ chớm nở từ những tương đồng trong cuộc sống hàng ngày, từ tâm hồn cho đến những điều nhỏ nhặt trong cuộc sống thường nhật.</p>
+
+	<p>Và đó là sự mở đầu cho những hứa hẹn của lứa tuổi đầy mộng mơ. Cả hai luôn quấn quýt nhau không rời, ý nghĩ sẽ rời xa người kia cũng chưa từng xuất hiện.</p>
+
+	<p>Nhưng sự chia ly chưa bao giờ được báo trước, Akari không thể tiếp tục lời hứa và phải chuyển đi nơi khác, lần đầu tiên trong cuộc đời cả hai hiểu được nỗi đau của sự chia xa. Họ chỉ có thể kết nối với nhau qua những kỷ niệm xưa cũ được gói gọn trong vài dòng thư</p>
+	<!--------------------------------------------hình ảnh 2--------------------------------------------------------------------->
+  	<img src="khoanh/Phan-canh-trong-5-Centimet-tren-giay-e1576161680306.jpg" alt="hình ảnh2" style="width: 440px">
+    <!--------------------------------------------------------------------------------------------------------------------->
+	<br><br><p>Nhưng dần dần, khoảng cách và những biến động trong cuộc sống đã khiến hai tâm hồn non nớt không còn kiên định với tình cảm đầu đời của mình.</p>
+
+	<p>Mỗi người đều sẽ lớn lên, sẽ có cho mình những mối tình khác đẹp hơn nhưng đâu đó trong sâu thẳm trái tim, hình bóng năm nào vẫn hiển hiện, khắc sâu mãi mãi. Dù có vươn tới đâu đi nữa, thỉnh thoảng ngực trái sẽ lại rung lên trong nỗi nhớ nhung và tiếc nuối.</p>
+
+	<p>Nhịp phim 5 Centimet trên giây luôn nhẹ nhàng và chậm rãi, không có những cao trào hay kịch tích. Shinkai Makoto đem đến cho người xem một bộ phim để ngẫm, để thấm và để xem lại hình bóng rất thân quen của bản thân trong quá trình trưởng thành của Takaki.</p>
+	<!--------------------------------------------hình ảnh 3--------------------------------------------------------------------->
+  	<img src="khoanh/phan-canh-Takaki-va-Akari-gap-nhau-trong-dem-e1576160464839.jpg" alt="hình ảnh2" style="width: 440px">
+    <!--------------------------------------------------------------------------------------------------------------------->
+	<br><br><p>Cảm xúc tuyệt vọng của Takaki khi chuyến tàu đến với Akari bị dừng trong đêm bão tuyết, tâm trạng tiếc nuối khi Takaki đánh rơi bức thư trong đêm mịt mù, đó có lẽ là nỗi đau mà bất cứ ai khi còn trẻ cũng sẽ phải trải qua một lần.</p>
+
+	<hr>
+	<p><i>“Tại sao mọi thứ đến với chúng tôi đều trắc trở như vậy?” </i> </p>
+	<hr>
+	<p>Đó là câu hỏi của Takaki và cũng là câu hỏi của chính bản thân mỗi người, tại sao trong những giây phút quan trọng nhất, thiêng liêng nhất thì số phận luôn thử thách chúng ta bằng cách nghiệt ngã nhất.</p>
+
+	<p>Nhân vật chính đã chìm sâu trong tuyệt vọng khi cậu và Akari luôn phải đối mặt với đau thương và mất mát. Dù vậy, sự rung động đầu đời luôn là thứ tình cảm thiêng liêng và thuần khiết nhất.</p>
+
+	<p>Tình yêu của tuổi học trò là khoảng thời gian mà chúng ta yêu điên cuồng, sẵn sáng đánh đổi mọi thứ cho tình cảm đó. Trong đêm tuyết đầu mùa, hai đứa trẻ đã làm mọi cách để có thể được gặp nhau dù chỉ trong giây lát.</p>
+	<hr>
+	<p><i>“Chờ đợi có lẽ là việc khó khăn nhất trên đời, nhưng vẫn có nhiều người can tâm như thế, bất luận kết quả có thế nào đi nữa.”</i></p>
+	<hr>
+	<p>Những chiếc tàu bị kẹt trong bão tuyết, ánh lửa le lói nơi nhà ga, hơn mười giờ chờ đợi trong cái lạnh thấu của mùa đông chỉ để tìm nhau của hai con người. Sự nỗ lực của họ khiến cho đêm tuyết trắng như được thắp lên ánh sáng thiêng liêng của tuổi trẻ.</p>
+
+	<p>Sự chia tay tất nhiên sẽ đến nhưng yêu thương đã được đặt ở nơi sâu thẳm nhất của con tim, tình yêu như những cánh hoa anh đào đẹp đẽ, rực rỡ nhưng rồi sẽ rơi theo gió. Có gặp nhau rồi sẽ lại chia xa.</p>
+	<!--------------------------------------------hình ảnh 4--------------------------------------------------------------------->
+  	<img src="khoanh/hinh4.png" alt="hình ảnh2" style="width: 440px">
+    <!--------------------------------------------------------------------------------------------------------------------->
+	<br><br> 
+	<p>Takaki và Akari chưa từng gặp lại nhau thêm lần nào nữa và lời hứa cùng nhau ngắm hoa anh đào rơi mãi mãi bị bỏ lỡ. Những dòng tin nhắn chưa bao giờ được gửi, những cảm xúc chưa bao giờ được nói ra. Cả hai đã lạc mất nhau vì những yếu đuối, sợ sệt của tuổi trẻ</p>
+	<hr><p><i>Vào khoản khắc môi chạm môi, tôi đã hiểu ra ý nghĩa vĩnh viễn của trái tim, của linh hồn. Bằng nụ hôn ấy, chúng tôi đã trao nhau tất cả những gì quý giá và trọn vẹn của mười ba năm qua, để rồi giây phút tiếp theo và suốt quãng đời còn lại sẽ là nỗi buồn khôn nguôi đeo đẳng.”</i></p><hr>
+	<p>Tình yêu bắt nguồn từ từ sự đồng điệu từ hai tâm hồn luôn là tình cảm khó quên nhất, nhưng tình cảm dù sâu đậm, bền chặt đến đâu rồi cũng sẽ phai mờ theo thời gian.</p>
+	<p>Trong cuộc đời của chúng ta ai rồi cũng sẽ phải trải qua vài ba mối tình. Có lẽ bạn sẽ yêu thêm nhiều người, trải qua những tình cảm sâu đậm nhưng chỉ có một người khiến ta mãi không thể quên.</p>
+	<p><i>" Đời mỗi người sẽ gặp khoảng 29,2 triệu người, xác suất để hai người yêu nhau là 0,000049. Cho nên, anh không yêu em, em không trách anh.”</i></p>
+	<p>Takaki khi trưởng thành thành trải qua thêm nhiều mối tình, cảm xúc cậu dành cho họ luôn rất chân thành và sâu đậm. Tiếc thay, Takaki chưa thể tìm ra được người con gái của đời mình, có lẽ mối tình đầu là vật cản quá lớn.</p>
+	<!--------------------------------------------hình ảnh 6--------------------------------------------------------------------->
+  	<img src="khoanh/hinh6.jpg" alt="hình ảnh2" style="width: 440px">
+    <!--------------------------------------------------------------------------------------------------------------------->
+	<br><br> 
+	<p>Dẫu bản thân luôn cố gắng thành trải qua thêm nhiều mối tình, cảm xúc cậu dành cho họ luôn rất chân thành và sâu đậm. Tiếc thay, Takaki chưa thể tìm ra được người con gái của đời mình, có lẽ mối tình đầu là vật cản quá lớn.</p>
+	<!--------------------------------------------hình ảnh 7--------------------------------------------------------------------->
+  	<img src="khoanh/hinh7.jpg" alt="hình ảnh2" style="width: 440px">
+    <!--------------------------------------------------------------------------------------------------------------------->
+	<br><br> 
+	<p>Xuyên suốt cuộc đòi đời của Takaki, hình ảnh về Akari đã trở thành nỗi đau và sự nhớ nhung mà cậu không thể vượt qua. Nhưng nhờ một khoảnh khắc, một trong những khung cảnh ấn tượng nhất của bộ phim mới giúp cho Takaki nhận ra đâu mới là hiện thực, để cậu bỏ qua quá khứ và hướng tới tương lai tốt hơn.</p>
+	<p>Vào một chiều trên phố phố, Takaki vô tình lướt qua Akaki tại nơi ngã tư đường. Cả hai dưởng như trở thành những người xa lạ, hai người dưng ngược lối. Cả hai cảm nhận được đều gì đó quen thuộc, họ dừng lại và nhìn nhau.</p>
+	<!--------------------------------------------hình ảnh 8--------------------------------------------------------------------->
+  	<img src="khoanh/hinh8.jpg" alt="hình ảnh2" style="width: 440px">
+    <!--------------------------------------------------------------------------------------------------------------------->
+	<br><br> 
+	<p>Một lần nữa như sự trêu đùa của số phận, đoàn tàu lướt qua chia cắt cả hai thêm một lần. Hình ảnh Takaki đứng bên đường ray chờ đợi đã đem lại sự ám ảnh, để rồi khi đoàn tàu lướt qua chỉ còn lại những cánh hoa anh đào rơi trong gió.</p>
+	<p>Với Akaki, cô nhóc mộng mơ ngày nào giờ đã trưởng thành một thiếu nữ, có cho mình một cuộc sống hạnh phúc bên người mới. Nhẹ nhàng bước qua vết thương của quá khứ và tìm cho mình một cuộc sống viên mãn với hiện tại.</p>
+	<p>Trong một lần tình cờ, Akaki đã tìm thấy những lá thư của thời học trò đẹp đẽ khi xưa nhưng khác với Takaki, cô chỉ hoài niệm đôi chút vể mối tình đầu thơ ngây. Ai rồi cũng có cuộc sống của riêng mình, có lẽ, đó là lý do Akaki bước đi mà không chờ đợi đoàn tàu lướt qua.</p>
+	<p>Trong khoản khắc đó,Takaki đã nhận ra rằng cả hai đều đã trưởng thành, sẽ có cho mình cuộc sống riêng. Với nụ cười trên môi, cậu thấy nhẹ nhàng và không còn mang nặng những dằn vặt lâu nay, chỉ còn những cánh hoa anh đào rơi. Bản thân cậu cũng rời khỏi nơi ấy.</p>
+ <!--------------------------------------------------------------------------------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
